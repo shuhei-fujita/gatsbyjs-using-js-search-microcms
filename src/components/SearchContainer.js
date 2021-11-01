@@ -13,10 +13,13 @@ class Search extends Component {
     }
 
     async componentDidMount() {
-        Axios.get(`https://bvaughn.github.io/js-search/books.json`)
+        Axios.get(process.env.BASE_URL,
+            {
+                headers: { 'X-MICROCMS-API-KEY': `${process.env.API_KEY}` }
+            })
             .then(result => {
                 const newsData = result.data
-                this.setState({ newsList: newsData.books })
+                this.setState({ newsList: newsData.contents })
                 this.rebuildIndex()
             })
             .catch(err => {
