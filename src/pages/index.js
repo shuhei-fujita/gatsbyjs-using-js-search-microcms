@@ -1,20 +1,14 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Search from "../components/search"
+import Search from "../components/SearchContainer"
 
 const IndexPage = ({ data }) => (
-  <Layout>
+  <div>
     <h1>search engine in Gatsby</h1>
     
     <div>
-      <input
-        type="text"
-        name="searchBar"
-        id="searchBar"
-        placeholder="type..."
-       />
+      <Search />
     </div>
 
     {/* NEWS */}
@@ -42,7 +36,7 @@ const IndexPage = ({ data }) => (
 
       </div>
     </section>
-  </Layout>
+  </div>
 )
 
 export default IndexPage
