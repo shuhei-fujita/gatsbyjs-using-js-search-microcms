@@ -17,5 +17,11 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        allowList: ["API_KEY", "BASE_URL"]
+      },
+    },
   ],
 }

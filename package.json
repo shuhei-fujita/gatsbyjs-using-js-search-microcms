@@ -7,6 +7,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "gatsby": "^4.0.2",
+    "gatsby-plugin-env-variables": "^2.1.0",
     "gatsby-source-microcms": "^2.0.0",
     "js-search": "^2.0.0",
     "react": "^17.0.1",

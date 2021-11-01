@@ -13,10 +13,13 @@ class Search extends Component {
     }
 
     async componentDidMount() {
-        Axios.get(`https://bvaughn.github.io/js-search/books.json`)
+        Axios.get(process.env.BASE_URL,
+            {
+                headers: { 'X-MICROCMS-API-KEY': `${process.env.API_KEY}` }
+            })
             .then(result => {
                 const newsData = result.data
-                this.setState({ newsList: newsData.books })
+                this.setState({ newsList: newsData.contents })
                 this.rebuildIndex()
             })
             .catch(err => {
@@ -215,25 +218,6 @@ class Search extends Component {
             </div>
         )
     }
-
-    // getOrCreateIndex = () =>
-    //     this.index
-    //         ? this.index
-    //         : // Create an elastic lunr index and hydrate with graphql query results
-    //         Index.load(this.props.searchIndex)
-
-    // search = evt => {
-    //     const query = evt.target.value
-    //     this.index = this.getOrCreateIndex()
-    //     this.setState({
-    //         query,
-    //         // Query the index with search string to get an [] of IDs
-    //         results: this.index
-    //             .search(query, {})
-    //             // Map over each ID and return the full document
-    //             .map(({ ref }) => this.index.documentStore.getDoc(ref)),
-    //     })
-    // }
 }
 
 export default Search
