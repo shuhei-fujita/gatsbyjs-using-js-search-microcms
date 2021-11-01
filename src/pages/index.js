@@ -1,5 +1,5 @@
 import * as React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Search from "../components/search"
@@ -16,22 +16,6 @@ const IndexPage = ({ data }) => (
         placeholder="type..."
        />
     </div>
-    
-    {/* <StaticQuery
-      query={graphql`
-        query SearchIndexQuery {
-          siteSearchIndex {
-            index
-          }
-        }
-      `}
-      render={data => (
-        <header>
-          ... header stuff...
-          <Search searchIndex={data.siteSearchIndex.index} />
-        </header>
-      )}
-    /> */}
 
     {/* NEWS */}
     <section className="bg-white py-8 mx-8">
